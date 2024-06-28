@@ -1,0 +1,24 @@
+object DataModuleConnection: TDataModuleConnection
+  OnCreate = DataModuleCreate
+  Height = 750
+  Width = 1000
+  PixelsPerInch = 120
+  object SQL_Query: TFDQuery
+    Connection = Connection
+    Left = 640
+    Top = 208
+  end
+  object Connection: TFDConnection
+    Left = 48
+    Top = 144
+  end
+  object WaitCursor: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 104
+    Top = 40
+  end
+  object Driver: TFDPhysMySQLDriverLink
+    Left = 160
+    Top = 144
+  end
+end

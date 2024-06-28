@@ -1,0 +1,226 @@
+object EditForm: TEditForm
+  Left = 0
+  Top = 0
+  Caption = 'Editar Cliente'
+  ClientHeight = 442
+  ClientWidth = 628
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 628
+    Height = 65
+    Align = alTop
+    Caption = 'Editar Cliente'
+    TabOrder = 0
+    ExplicitWidth = 622
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 65
+    Width = 628
+    Height = 311
+    Align = alClient
+    TabOrder = 1
+    ExplicitWidth = 622
+    ExplicitHeight = 302
+    object BirthLabel: TLabel
+      Left = 268
+      Top = 83
+      Width = 56
+      Height = 15
+      Caption = 'Data Nasc.'
+    end
+    object CepLabel: TLabel
+      Left = 395
+      Top = 83
+      Width = 21
+      Height = 15
+      Caption = 'CEP'
+    end
+    object CityLabel: TLabel
+      Left = 330
+      Top = 155
+      Width = 37
+      Height = 15
+      Caption = 'Cidade'
+    end
+    object ContactLabel: TLabel
+      Left = 464
+      Top = 19
+      Width = 43
+      Height = 15
+      Caption = 'Contato'
+    end
+    object CountryLabel: TLabel
+      Left = 303
+      Top = 219
+      Width = 21
+      Height = 15
+      Caption = 'Pa'#237's'
+    end
+    object CpfLabel: TLabel
+      Left = 236
+      Top = 19
+      Width = 21
+      Height = 15
+      Caption = 'CPF'
+    end
+    object EmailLabel: TLabel
+      Left = 24
+      Top = 83
+      Width = 34
+      Height = 15
+      Caption = 'E-mail'
+    end
+    object NameLabel: TLabel
+      Left = 24
+      Top = 19
+      Width = 33
+      Height = 15
+      Caption = 'Nome'
+    end
+    object NumLabel: TLabel
+      Left = 268
+      Top = 155
+      Width = 14
+      Height = 15
+      Caption = 'N'#176
+    end
+    object StateLabel: TLabel
+      Left = 24
+      Top = 219
+      Width = 35
+      Height = 15
+      Caption = 'Estado'
+    end
+    object StreetLabel: TLabel
+      Left = 24
+      Top = 155
+      Width = 20
+      Height = 15
+      Caption = 'Rua'
+    end
+    object CepEdit: TEdit
+      Left = 395
+      Top = 104
+      Width = 190
+      Height = 23
+      TabOrder = 0
+    end
+    object CityEdit: TEdit
+      Left = 330
+      Top = 176
+      Width = 255
+      Height = 23
+      TabOrder = 1
+    end
+    object ContactEdit: TEdit
+      Left = 464
+      Top = 40
+      Width = 121
+      Height = 23
+      TabOrder = 2
+    end
+    object CountryEdit: TEdit
+      Left = 303
+      Top = 240
+      Width = 282
+      Height = 23
+      TabOrder = 3
+    end
+    object DateTimePickerBirth: TDateTimePicker
+      Left = 268
+      Top = 104
+      Width = 121
+      Height = 23
+      Date = 45470.000000000000000000
+      Time = 0.885696851852117100
+      TabOrder = 4
+    end
+    object EmailEdit: TEdit
+      Left = 24
+      Top = 104
+      Width = 238
+      Height = 23
+      TabOrder = 5
+    end
+    object NameEdit: TEdit
+      Left = 24
+      Top = 40
+      Width = 206
+      Height = 23
+      TabOrder = 6
+    end
+    object NumEdit: TEdit
+      Left = 268
+      Top = 176
+      Width = 56
+      Height = 23
+      TabOrder = 7
+    end
+    object StateEdit: TEdit
+      Left = 24
+      Top = 240
+      Width = 273
+      Height = 23
+      TabOrder = 8
+    end
+    object StreetEdit: TEdit
+      Left = 24
+      Top = 176
+      Width = 238
+      Height = 23
+      TabOrder = 9
+    end
+    object CheckBoxActivate: TCheckBox
+      Left = 24
+      Top = 277
+      Width = 97
+      Height = 17
+      Caption = 'Ativar conta'
+      TabOrder = 10
+    end
+    object CpfEdit: TEdit
+      Left = 236
+      Top = 40
+      Width = 222
+      Height = 23
+      TabOrder = 11
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 376
+    Width = 628
+    Height = 66
+    Align = alBottom
+    TabOrder = 2
+    ExplicitTop = 367
+    ExplicitWidth = 622
+    object EditButton: TButton
+      Left = 510
+      Top = 24
+      Width = 75
+      Height = 25
+      Caption = 'Editar'
+      TabOrder = 0
+      OnClick = EditButtonClick
+    end
+    object CancelButton: TButton
+      Left = 24
+      Top = 24
+      Width = 75
+      Height = 25
+      Caption = 'Cancelar'
+      TabOrder = 1
+      OnClick = CancelButtonClick
+    end
+  end
+end

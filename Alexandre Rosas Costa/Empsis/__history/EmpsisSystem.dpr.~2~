@@ -1,0 +1,19 @@
+program EmpsisSystem;
+
+uses
+  Vcl.Forms,
+  view.principal in 'src\view\view.principal.pas' {MainForm},
+  service.connection in 'src\service\service.connection.pas' {DataModuleConnection: TDataModule},
+  view.registerclient in 'src\view\view.registerclient.pas',
+  view.register.client in 'src\view\view.register.client.pas' {RegisterClientForm};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TMainForm, MainForm);
+  Application.CreateForm(TDataModuleConnection, DataModuleConnection);
+  Application.CreateForm(TRegisterClientForm, RegisterClientForm);
+  Application.Run;
+end.

@@ -1,0 +1,306 @@
+object RegisterClientForm: TRegisterClientForm
+  Left = 0
+  Top = 0
+  Caption = 'Cadastrar Cliente'
+  ClientHeight = 442
+  ClientWidth = 628
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 628
+    Height = 65
+    Align = alTop
+    Caption = 'Cadastro de Cliente'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -25
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsItalic]
+    ParentFont = False
+    TabOrder = 0
+    ExplicitWidth = 622
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 65
+    Width = 628
+    Height = 303
+    Align = alClient
+    TabOrder = 1
+    ExplicitWidth = 622
+    ExplicitHeight = 294
+    object NameLabel: TLabel
+      Left = 32
+      Top = 19
+      Width = 39
+      Height = 20
+      Caption = 'Nome'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsItalic]
+      ParentFont = False
+    end
+    object CpfLabel: TLabel
+      Left = 244
+      Top = 19
+      Width = 26
+      Height = 20
+      Caption = 'CPF'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsItalic]
+      ParentFont = False
+    end
+    object ContactLabel: TLabel
+      Left = 472
+      Top = 19
+      Width = 52
+      Height = 20
+      Caption = 'Contato'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsItalic]
+      ParentFont = False
+    end
+    object EmailLabel: TLabel
+      Left = 32
+      Top = 83
+      Width = 42
+      Height = 20
+      Caption = 'E-mail'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsItalic]
+      ParentFont = False
+    end
+    object CityLabel: TLabel
+      Left = 338
+      Top = 155
+      Width = 45
+      Height = 20
+      Caption = 'Cidade'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsItalic]
+      ParentFont = False
+    end
+    object CepLabel: TLabel
+      Left = 403
+      Top = 83
+      Width = 26
+      Height = 20
+      Caption = 'CEP'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsItalic]
+      ParentFont = False
+    end
+    object StreetLabel: TLabel
+      Left = 32
+      Top = 155
+      Width = 25
+      Height = 20
+      Caption = 'Rua'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsItalic]
+      ParentFont = False
+    end
+    object NumLabel: TLabel
+      Left = 276
+      Top = 155
+      Width = 17
+      Height = 20
+      Caption = 'N'#176
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsItalic]
+      ParentFont = False
+    end
+    object StateLabel: TLabel
+      Left = 32
+      Top = 219
+      Width = 42
+      Height = 20
+      Caption = 'Estado'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsItalic]
+      ParentFont = False
+    end
+    object CountryLabel: TLabel
+      Left = 311
+      Top = 219
+      Width = 27
+      Height = 20
+      Caption = 'Pa'#237's'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsItalic]
+      ParentFont = False
+    end
+    object BirthLabel: TLabel
+      Left = 276
+      Top = 83
+      Width = 71
+      Height = 20
+      Caption = 'Data Nasc.'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsItalic]
+      ParentFont = False
+    end
+    object NameEdit: TEdit
+      Left = 32
+      Top = 40
+      Width = 206
+      Height = 23
+      TabOrder = 0
+    end
+    object ContactEdit: TEdit
+      Left = 472
+      Top = 40
+      Width = 121
+      Height = 23
+      TabOrder = 1
+    end
+    object EmailEdit: TEdit
+      Left = 32
+      Top = 104
+      Width = 238
+      Height = 23
+      TabOrder = 2
+    end
+    object CityEdit: TEdit
+      Left = 338
+      Top = 176
+      Width = 255
+      Height = 23
+      TabOrder = 3
+    end
+    object StreetEdit: TEdit
+      Left = 32
+      Top = 176
+      Width = 238
+      Height = 23
+      TabOrder = 4
+    end
+    object NumEdit: TEdit
+      Left = 276
+      Top = 176
+      Width = 56
+      Height = 23
+      TabOrder = 5
+    end
+    object StateEdit: TEdit
+      Left = 32
+      Top = 240
+      Width = 273
+      Height = 23
+      TabOrder = 6
+    end
+    object CountryEdit: TEdit
+      Left = 311
+      Top = 240
+      Width = 282
+      Height = 23
+      TabOrder = 7
+    end
+    object DateTimePickerBirth: TDateTimePicker
+      Left = 276
+      Top = 104
+      Width = 121
+      Height = 23
+      Date = 45470.000000000000000000
+      Time = 0.885696851852117100
+      TabOrder = 8
+    end
+    object CpfEdit: TMaskEdit
+      Left = 244
+      Top = 40
+      Width = 217
+      Height = 23
+      EditMask = '!999.999.999-99;'#39
+      MaxLength = 14
+      TabOrder = 9
+      Text = '   .   .   -  '
+    end
+    object CepEdit: TSearchBox
+      Left = 403
+      Top = 104
+      Width = 187
+      Height = 23
+      TabOrder = 10
+      OnChange = CepEditEnter
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 368
+    Width = 628
+    Height = 74
+    Align = alBottom
+    TabOrder = 2
+    ExplicitTop = 359
+    ExplicitWidth = 622
+    object RegisterButton: TButton
+      Left = 483
+      Top = 16
+      Width = 110
+      Height = 41
+      Caption = 'Cadastrar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = RegisterButtonClick
+    end
+    object CancelButton: TButton
+      Left = 32
+      Top = 16
+      Width = 97
+      Height = 41
+      Caption = 'Cancelar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnClick = CancelButtonClick
+    end
+  end
+end

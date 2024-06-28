@@ -1,0 +1,126 @@
+unit view.register.client;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls,
+  Vcl.Mask, System.RegularExpressions, System.JSON,Vcl.WinXCtrls, IdHTTP, IdSSLOpenSSL;
+
+type
+  TRegisterClientForm = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    NameLabel: TLabel;
+    NameEdit: TEdit;
+    CpfLabel: TLabel;
+    ContactEdit: TEdit;
+    ContactLabel: TLabel;
+    EmailEdit: TEdit;
+    EmailLabel: TLabel;
+    CityEdit: TEdit;
+    CityLabel: TLabel;
+    CepLabel: TLabel;
+    StreetEdit: TEdit;
+    StreetLabel: TLabel;
+    NumEdit: TEdit;
+    NumLabel: TLabel;
+    StateEdit: TEdit;
+    StateLabel: TLabel;
+    CountryEdit: TEdit;
+    CountryLabel: TLabel;
+    DateTimePickerBirth: TDateTimePicker;
+    BirthLabel: TLabel;
+    RegisterButton: TButton;
+    CancelButton: TButton;
+    CpfEdit: TMaskEdit;
+    CepEdit: TEdit;
+    Button1: TButton;
+    procedure RegisterButtonClick(Sender: TObject);
+    procedure CancelButtonClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  RegisterClientForm: TRegisterClientForm;
+
+implementation
+
+{$R *.dfm}
+
+uses service.cliente, service.endereco;
+
+procedure TRegisterClientForm.Button1Click(Sender: TObject);
+var
+  http : TIdHTTP;
+  JSONValue: TJSONValue;
+  JSONObj: TJSONObject;
+  Response: string;
+  URL: string;
+begin
+  if not (Assigned(http)) and (Assigned(JSONValue)) and (Assigned(JSONObj))then
+    http := TIdHTTP.Create(nil);
+    JSONValue := TJSONValue.Create;
+    JSONObj := TJSONObject.Create;
+  URL := 'http://viacep.com.br/ws/' + CepEdit.Text + '/json/';
+  try
+    Response := http.Get(URL);
+    JSONValue := TJSONObject.ParseJSONValue(Response);
+
+    if (JSONValue <> nil) and (JSONValue is TJSONObject) then
+    begin
+      JSONObj := TJSONObject(JSONValue);
+
+      StreetEdit.Text := JSONObj.GetValue<string>('logradouro', '');
+      CityEdit.Text := JSONObj.GetValue<string>('localidade', '');
+      StateEdit.Text := JSONObj.GetValue<string>('uf', '');
+    end
+    else
+    begin
+      ShowMessage('CEP não encontrado ou resposta inválida.');
+    end;
+  except
+    on E: Exception do
+    begin
+      ShowMessage('Erro ao buscar o CEP: ' + E.Message);
+    end;
+  end;
+end;
+
+procedure TRegisterClientForm.CancelButtonClick(Sender: TObject);
+begin
+  ModalResult := mrCancel;
+end;
+
+procedure TRegisterClientForm.RegisterButtonClick(Sender: TObject);
+var
+  Cliente: TCliente;
+  Endereco: TEndereco;
+  cpf: string;
+begin
+  if CpfEdit.Text = '' then
+  begin
+    ShowMessage('Por favor, preencha o CPF.');
+    Exit;
+  end;
+  try
+    cpf := CpfEdit.Text;
+    cpf := TRegEx.Replace(CPF, '\D', '');
+    Cliente := TCliente.Create(NameEdit.Text, cpf, ContactEdit.Text, EmailEdit.Text, DateTimePickerBirth.Date, true);
+    Endereco := TEndereco.Create(cpf, CepEdit.Text, StreetEdit.Text, NumEdit.Text, CityEdit.Text, StateEdit.Text, CountryEdit.Text);
+    Cliente.cadastrarCliente;
+    Endereco.cadastrarEndereco;
+    ShowMessage('Cliente e endereço cadastrados com sucesso!');
+    ModalResult := mrOk;
+  except
+    on E: Exception do
+      ShowMessage('Erro: ' + E.Message);
+  end;
+end;
+
+end.

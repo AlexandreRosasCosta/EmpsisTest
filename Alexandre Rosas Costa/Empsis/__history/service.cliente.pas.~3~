@@ -1,0 +1,59 @@
+unit service.cliente;
+
+uses
+  SysUtils, RegularExpressions;
+
+type
+  TCliente = class
+  private
+    FNome: string;
+    FCpf: string;
+    FTelefone: string;
+    FEmail: string;
+    FDataNascimento: TDate;
+    function ValidarCpf(const Cpf: string): string;
+  public
+    constructor Create(const Nome, Cpf, Telefone, Email: string; DataNascimento: TDate);
+    property Nome: string read FNome write FNome;
+    property Cpf: string read FCpf write FCpf;
+    property Telefone: string read FTelefone write FTelefone;
+    property Email: string read FEmail write FEmail;
+    property DataNascimento: TDate read FDataNascimento write FDataNascimento;
+    procedure cadastrarCliente;
+  end;
+
+implementation
+
+uses service.connection;
+
+constructor TCliente.Create(const Nome, Cpf, Telefone, Email: string; DataNascimento: TDate);
+begin
+  inherited Create;
+  FNome := Nome;
+  FCpf := ValidarCpf(Cpf);
+  FTelefone := Telefone;
+  FEmail := Email;
+  FDataNascimento := DataNascimento;
+end;
+
+procedure TCliente.cadastrarCliente;
+begin
+  with DataModuleConnection.SQL_Query do
+  begin
+    SQL.Text := 'INSERT INTO cliente (nome, cpf, telefone, email, data_nascimento) ' +
+                'VALUES (:nome, :cpf, :telefone, :email, :data_nascimento)';
+    ParamByName('nome').AsString := Nome;
+    ParamByName('cpf').AsString := Cpf;
+    ParamByName('telefone').AsString := Telefone;
+    ParamByName('email').AsString := Email;
+    ParamByName('data_nascimento').AsDate := DataNascimento;
+    ExecSQL;
+  end;
+end;
+
+function TCliente.ValidarCpf(const Cpf: string): string;
+begin
+
+end;
+
+end.

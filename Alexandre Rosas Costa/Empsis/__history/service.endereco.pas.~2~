@@ -1,0 +1,41 @@
+unit service.endereco;
+
+interface
+
+uses
+  SysUtils;
+
+type
+  TEndereco = class
+  private
+    FCpf: string;
+    FCep: string;
+    FRua: string;
+    FNumero: string;
+    FCidade: string;
+    FEstado: string;
+    FPais: string;
+  public
+    constructor Create(const Cpf, Cep, Rua, Numero, Cidade, Estado, Pais: string);
+    property Cpf: string read FCpf write FCpf;
+    property Cep: string read FCep write FCep;
+    property Rua: string read FRua write FRua;
+    property Numero: string read FNumero write FNumero;
+    property Cidade: string read FCidade write FCidade;
+    property Estado: string read FEstado write FEstado;
+    property Pais: string read FPais write FPais;
+  end;
+
+implementation
+
+constructor TEndereco.Create(const Cpf, Cep, Rua, Numero, Cidade, Estado, Pais: string);
+begin
+  inherited Create;
+  FCpf := Cpf;
+  FCep := Cep;
+  FRua := Rua;
+  FNumero := Numero;
+  FCidade := Cidade;
+  FEstado := Estado;
+  FPais := Pais;
+end;
