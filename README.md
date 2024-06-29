@@ -26,13 +26,13 @@ Este repositório contém o código fonte do projeto Empsis, desenvolvido como p
    ```sh
    git clone git@github.com:AlexandreRosasCosta/EmpsisTest.git
 
-Configurar Diretórios de Build:
+## Configurar Diretórios de Build:
 No Delphi, vá para Project > Options > Delphi Compiler > Output - Debug e Output - Release. Configure os seguintes campos:
 
 Unit output directory: .\Win32\Debug\ (para Debug)
 Output directory: .\bin\Debug\ (para Debug)
 
-Configurar o Search Path:
+## Configurar o Search Path:
 Em Building > Delphi Compiler > Search path, adicione:
 
 .\src\
@@ -41,17 +41,17 @@ Em Building > Delphi Compiler > Search path, adicione:
 .\lib\
 .\img\
 
-Execução do Projeto
+## Execução do Projeto
 Configurar o Banco de Dados:
 Certifique-se de que o banco de dados MariaDB 10.4.32 está instalado.
 Execute o script de banco de dados localizado na pasta Banco de Dados/ para criar o banco de dados necessário.
 
-Compilar e Executar:
+## Compilar e Executar:
 No Delphi, selecione a configuração de build (Debug).
 Compile e execute o projeto.
 O executável pode ser encontrado no diretório bin/Debug/.
 
-Estrutura do Código
+## Estrutura do Código
 - `src/service/`:
   - `service.cliente.pas`: Implementação de funcionalidades relacionadas ao cliente.
   - `service.connection.pas` e `service.connection.dfm`: Configuração e implementação da conexão com o banco de dados.
@@ -63,9 +63,11 @@ Estrutura do Código
   - `view.register.client.pas` e `view.register.client.dfm`: Formulário para registro de novos clientes.
   - `view.register.client.vlb`: Arquivo adicional para o formulário de registro de clientes.
 
-Contato
+## Contato
+
 Para qualquer dúvida ou esclarecimento adicional, entre em contato:
 
 Nome: Alexandre
+
 Email: alexandrerosascosta@gmail.com
 
